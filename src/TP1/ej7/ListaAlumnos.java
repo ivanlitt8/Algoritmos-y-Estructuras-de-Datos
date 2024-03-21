@@ -2,6 +2,7 @@ package TP1.ej7;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 //d. Escriba un método que realice las siguientes acciones:
@@ -47,6 +48,7 @@ public class ListaAlumnos {
     
     public void agregarNuevoAlumno(Alumno al) {
     	if(!listaAlumnos.contains(al)) {
+    		System.out.println("El alumno fue agregado");
     		listaAlumnos.add(al);
     	} else {
     		System.out.println("El alumno no pudo agregarse porque ya esta en la lista");
@@ -66,12 +68,13 @@ public class ListaAlumnos {
         listaAlumnos.imprimirLista();
         
         Scanner scanner = new Scanner(System.in);
-        System.out.println(" Ingrese nombre de nuevo alumno: ");
+        System.out.println("Ingrese nombre de nuevo alumno: ");
         String nombre = scanner.next();
-        System.out.println(" Ingrese apellido de nuevo alumno: ");
+        System.out.println("Ingrese apellido de nuevo alumno: ");
         String apellido = scanner.next();
         Alumno nuevoAl = new Alumno(nombre, apellido);
         listaAlumnos.agregarNuevoAlumno(nuevoAl);
+        listaAlumnos.imprimirLista();
         
 	}    
 
