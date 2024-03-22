@@ -10,7 +10,7 @@ public class OrdenarListas {
 		 listaCombinada.addAll(lista1);
 		 listaCombinada.addAll(lista2);
 		 
-		 Collections.sort(listaCombinada);
+		 Collections.sort(listaCombinada); // Corregir, no se puede usar este metodo
 
 		 return listaCombinada;
 	}

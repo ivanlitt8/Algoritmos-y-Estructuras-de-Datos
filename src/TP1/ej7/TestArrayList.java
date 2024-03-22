@@ -28,7 +28,8 @@ public class TestArrayList{
             test.agregarNumero(numero); // Agrega el número a la lista
         }
         
-        test.imprimirLista(); // Imprime los números almacenados en la lista
+        // test.imprimirLista(); // Imprime los números almacenados en la lista
+        
     }
 	
 }
