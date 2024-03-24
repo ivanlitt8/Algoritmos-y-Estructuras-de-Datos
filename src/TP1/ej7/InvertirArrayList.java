@@ -20,6 +20,17 @@ public class InvertirArrayList {
 	    }
 	}
 	
+	//	private static void invertirRecursivamente(ArrayList<Integer> lista, int inicio, int fin) {
+    //    if (inicio < fin) {
+    //        int temp = lista.get(inicio);
+    //        lista.remove(inicio);
+    //        lista.add(inicio, lista.get(fin - 1));
+    //        lista.remove(fin);
+    //        lista.add(fin, temp);
+    //        invertirRecursivamente(lista, inicio + 1, fin - 1);
+    //    }
+    //	}
+	
 	public static void main(String[] args) {
 		ArrayList<Integer> lista = new ArrayList<Integer>(); 
 		lista.add(2);
