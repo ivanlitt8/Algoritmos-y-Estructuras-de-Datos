@@ -3,7 +3,6 @@ package TP1.ej8;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sound.midi.Sequence;
 
 // a. Implemente en JAVA la clase Queue de acuerdo con la especificación dada en el
 // diagrama de clases. Defina esta clase dentro del paquete tp1.ejercicio8.
@@ -20,7 +19,7 @@ import javax.sound.midi.Sequence;
 // ● toString(): String Retorna los elementos de la cola en un String
 
 
-public class Queue<T> extends Sequence {
+public class Queue<T> extends Sequence<T> {
 	List<T> data;
 	
 	
