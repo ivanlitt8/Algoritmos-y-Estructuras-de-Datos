@@ -1,7 +1,6 @@
-package TP2.ej2;
+package TP2.ej4;
 
-//import java.util.LinkedList;
-import TP1.ej8.Queue; 
+import TP1.ej8.Queue;
 
 public class BinaryTree <T> {
 	
@@ -202,7 +201,5 @@ public class BinaryTree <T> {
  						cola.enqueue(null);
  				}
  		}
- } 
-		
+	}
 }
-

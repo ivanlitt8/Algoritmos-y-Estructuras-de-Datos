@@ -13,5 +13,21 @@ package TP2.ej4;
 //	método retardoReenvio():int
 
 public class Main {
+	public static void main(String[] args) {
+		
+		BinaryTree<Integer> tree = new BinaryTree<Integer>();
+		
+		RedBinaria redBinaria = new RedBinaria();
+        
+		tree = redBinaria.crearArbolLleno(5, 5);
 
+        // Ahora puedes utilizar el árbol creado como lo desees
+        // Por ejemplo, imprimir el árbol utilizando el método imprimir()
+        tree.printLevelTraversal();
+        
+        int maxRetardo = redBinaria.retardoReenvio(tree);
+        
+        System.out.println();
+        System.out.println("El retardo maximo de la red binaria es: "+ maxRetardo);
+	}
 }
