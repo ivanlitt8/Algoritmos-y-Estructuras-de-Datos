@@ -8,7 +8,13 @@ package TP2.ej6;
 
 public class Main {
 	public static void main(String[] args) {
-		Transformacion trans = new Transformacion(2,2);
+		Transformacion trans = new Transformacion(3,2);
+		
+		trans.imprimir();
+
+		System.out.println();
+		System.out.println("--------------");
+		trans.suma();
 		trans.imprimir();
 	}
 }

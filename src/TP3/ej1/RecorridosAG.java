@@ -1,0 +1,56 @@
+package TP3.ej1;
+
+import java.util.List;
+import java.util.Iterator;
+import java.util.LinkedList;	
+
+
+public class RecorridosAG {
+	
+	private List<Integer> list;
+	
+	public RecorridosAG() {
+        this.list = new LinkedList<>();
+    }
+    
+    public RecorridosAG(List<Integer> list) {
+        this.list = list;
+    }
+	
+	public List<Integer> numerosImparesMayoresQuePreOrden (GeneralTree <Integer> a, Integer n){
+		LinkedList<Integer> lista = (LinkedList<Integer>) a.preOrder();
+		LinkedList<Integer> nuevaLista = new LinkedList<Integer>();
+		Iterator<Integer> iterator = lista.listIterator();
+		while (iterator.hasNext()) {
+			Integer valor = iterator.next(); // Almacenamos el valor en una variable para no avanzar el iterador múltiples veces
+			System.out.println(valor);
+			if (valor % 2 != 0 && valor > n) {
+		        nuevaLista.add(valor); // Agregamos el valor a la nueva lista
+		    }
+		}
+		return nuevaLista;
+	}
+	
+	public List<Integer> numerosImparesMayoresQueInOrden (GeneralTree <Integer> a, Integer n){
+		System.out.println("****************");
+
+		LinkedList<Integer> lista = (LinkedList<Integer>) a.inOrder();
+		LinkedList<Integer> nuevaLista = new LinkedList<Integer>();
+		Iterator<Integer> iterator = lista.listIterator();
+		while (iterator.hasNext()) {
+			Integer valor = iterator.next(); // Almacenamos el valor en una variable para no avanzar el iterador múltiples veces
+			System.out.println(valor);
+			if (valor % 2 != 0 && valor > n) {
+		        nuevaLista.add(valor); // Agregamos el valor a la nueva lista
+		    }
+		}
+		return nuevaLista;
+	}
+	
+//	public List<Integer> numerosImparesMayoresQueInOrden (GeneralTree <Integer> a,
+//	Integer n)
+//	Método que retorna una lista con los elementos impares del árbol “a” que sean mayores al valor “n”
+//	pasados como parámetros, recorrido en inorden.
+	
+
+}

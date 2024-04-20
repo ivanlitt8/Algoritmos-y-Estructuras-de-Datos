@@ -26,12 +26,30 @@ public class Transformacion {
         return nodo;
     }
 	
-	public BinaryTree<Integer> suma (){
-		this.data;
-		sumaNodo = 
-		return null;
-	}
-	
+    
+    public BinaryTree <Integer> suma() {
+        suma(this.data);
+        return this.data;
+    }
+    
+    private int suma(BinaryTree<Integer> tree) {
+        int sum = 0;
+        if(tree.isLeaf()) {
+            sum = tree.getData();
+            tree.setData(0);
+            return sum;
+        }
+        if(tree.hasLeftChild()) {
+            sum	+= suma(tree.getLeftChild());
+        }
+        if(tree.hasRightChild()) {
+            sum+= suma(tree.getRightChild());
+        }
+        int actual = tree.getData();
+        tree.setData(sum);
+        return actual + sum;
+    }
+   
 	public void imprimir() {
 		this.data.printLevelTraversal();
 	}

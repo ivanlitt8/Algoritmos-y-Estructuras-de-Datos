@@ -15,13 +15,13 @@ public class ProfundidadDeArbolBinario {
 	}
 	
 	public BinaryTree<Integer> crearArbolLleno(int nivel, int valor) {
-        
+        										
 		if (nivel == 0) {
 	        return new BinaryTree<>(valor);
 	    }
 		
 		BinaryTree<Integer> nodo = new BinaryTree<Integer>(valor);
-        nodo.addLeftChild(crearArbolLleno(nivel - 1, valor * 2));
+        nodo.addLeftChild(crearArbolLleno(nivel - 1, valor * 2)); 
         nodo.addRightChild(crearArbolLleno(nivel - 1, valor * 2 + 1));
         
         return nodo;
