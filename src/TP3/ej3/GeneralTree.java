@@ -1,4 +1,4 @@
-package TP3.ej1;
+package TP3.ej3;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

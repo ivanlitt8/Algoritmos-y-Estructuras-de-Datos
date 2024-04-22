@@ -30,41 +30,64 @@ public class Main {
 		
 		GeneralTree<Integer> A1 = new GeneralTree<Integer>(1);
 		List <GeneralTree<Integer>> children1 = new LinkedList<GeneralTree<Integer>>();
-		children1.add(new GeneralTree<Integer>(15));
-		children1.add(new GeneralTree<Integer>(19));
-		children1.add(new GeneralTree<Integer>(25));
+		children1.add(new GeneralTree<Integer>(5));
+		children1.add(new GeneralTree<Integer>(9));
+		children1.add(new GeneralTree<Integer>(30));
+		children1.add(new GeneralTree<Integer>(99));
+		children1.add(new GeneralTree<Integer>(20));
 		
 		GeneralTree<Integer> A2 = new GeneralTree<Integer>(2,children1);
 		List <GeneralTree<Integer>> children2 = new LinkedList<GeneralTree<Integer>>();
-		children2.add(new GeneralTree<Integer>(44));
-		children2.add(new GeneralTree<Integer>(12));
-		children2.add(new GeneralTree<Integer>(17));
+		children2.add(new GeneralTree<Integer>(4));
+		children2.add(new GeneralTree<Integer>(2));
+		children2.add(new GeneralTree<Integer>(15));
+		children2.add(new GeneralTree<Integer>(13));
 
 		GeneralTree<Integer> A3 = new GeneralTree<Integer>(3,children2);
 		List <GeneralTree<Integer>> children = new LinkedList<GeneralTree<Integer>>();
 		children.add(A1);
 		children.add(A2);
 		children.add(A3);
-		GeneralTree<Integer> A = new GeneralTree<Integer>(65,children);
+		GeneralTree<Integer> A = new GeneralTree<Integer>(4,children);
 		
 		
 		RecorridosAG recorridos = new RecorridosAG();
 		int num = 3;
 		
-		List<Integer> listaImparesPostOrden = recorridos.numerosImparesMayoresQuePreOrden(A, num);
+		List<Integer> listaImparesPreOrder = recorridos.numerosImparesMayoresQuePreOrden(A, num);
 		List<Integer> listaImparesInOrden = recorridos.numerosImparesMayoresQueInOrden(A, num);
+		List<Integer> listaImparesPostOrden = recorridos.numerosImparesMayoresQuePostOrden(A, num);
+		List<Integer> listaImparesLevelOrden = recorridos.numerosImparesMayoresQuePorNiveles(A, num);
 
-		System.out.println("-------------");
+
+		System.out.println();
+		System.out.println("----PREORDEN----");
 		System.out.println("Los numeros impares mayores a "+num+" son");
-		for (Integer i: listaImparesPostOrden) {
-			System.out.println(i);
+		for (Integer i: listaImparesPreOrder) {
+			System.out.print(i+" ");
 		}
 		
-		System.out.println("-------------");
+		System.out.println();
+		System.out.println("----INORDEN----");
 		System.out.println("Los numeros impares mayores a "+num+" son");
 		for (Integer i: listaImparesInOrden) {
-			System.out.println(i);
+			System.out.print(i+" ");
 		}	
+		
+		System.out.println();
+		System.out.println("----POSTORDEN----");
+		System.out.println("Los numeros impares mayores a "+num+" son");
+		for (Integer i: listaImparesPostOrden) {
+			System.out.print(i+" ");
+		}	
+		
+		System.out.println();
+		System.out.println("----LEVELORDEN----");
+		System.out.println("Los numeros impares mayores a "+num+" son");
+		for (Integer i: listaImparesLevelOrden) {
+			System.out.print(i+" ");
+		}	
+		
 		
 	}
 
