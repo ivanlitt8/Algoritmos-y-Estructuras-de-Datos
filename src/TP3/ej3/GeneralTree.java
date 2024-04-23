@@ -1,6 +1,5 @@
 package TP3.ej3;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -130,14 +129,46 @@ public class GeneralTree<T>{
 	    return result;
 	}
 	
-	public int altura() {	 
-			
-		return 0;
+	public int altura() {
+	    return altura(this);
 	}
 	
+	private int altura(GeneralTree<T> node) {	 
+		if (node == null) {
+	        return 0;
+	    } else {
+	        int maxChildHeight = 0;
+	        for (GeneralTree<T> child : node.getChildren()) {
+		        maxChildHeight += 1;
+	            maxChildHeight = Math.max(maxChildHeight, altura(child));
+	        }
+	        return maxChildHeight;
+	    }
+	}
+
 	public int nivel(T dato){
-		return 0;
-	  }
+		if (this.getData() == dato) {
+	        return 0; // La raíz está en el nivel 0
+	    }
+	    Queue<GeneralTree<T>> queue = new Queue<>();
+	    queue.enqueue(this);
+	    int nivel = 0;
+	    while (!queue.isEmpty()) {
+	        int size = queue.size();
+	        for (int i = 0; i < size; i++) {
+	            GeneralTree<T> current = queue.dequeue();
+	            for (GeneralTree<T> child : current.getChildren()) {
+	            	nivel++;
+	                if (child.getData() == dato) {
+	                    return nivel;
+	                }else {
+	                	queue.enqueue(child);
+	                }
+	            }
+	        }
+	    }
+	    return -1; // El dato no se encuentra en el árbol
+	 }
 
 	public int ancho(){
 		
