@@ -1,8 +1,7 @@
-package TP3.ej3;
+package TP3.ej5;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import TP1.ej8.Queue;
 
 public class GeneralTree<T>{
@@ -189,4 +188,50 @@ public class GeneralTree<T>{
 	    }
 	    return maxAncho;
 	}
+	
+	public boolean esAncestro(T a, T b) {
+		boolean find = false;
+        GeneralTree<T> raiz = null;
+		Queue<GeneralTree<T>> cola = new Queue<GeneralTree<T>>();
+        cola.enqueue(this);
+        while(!cola.isEmpty() && (!find)) {
+        	GeneralTree<T> nodo = cola.dequeue();
+            if(nodo.getData().equals(b) && (!find)) {
+            	return false; // B antes que A, por lo que B no puede ser hijo de A
+            }
+            if(nodo.getData().equals(a)) {
+                find = true; // encontre A, ahora debo buscar al hijo
+                raiz = nodo;
+            }
+            if(!find) {
+            	List<GeneralTree<T>> children = nodo.getChildren();
+                for(GeneralTree<T> child: children) {
+                	cola.enqueue(child);
+                }
+            }
+        }
+        if (find) {
+        	return verificarAncestro(raiz, b);
+        }else {
+        	return false;
+        }
+	}
+		
+	private boolean verificarAncestro(GeneralTree<T> tree, T b) {
+        Queue<GeneralTree<T>> queue = new Queue<GeneralTree<T>>();
+        queue.enqueue(tree);
+        while(!queue.isEmpty()) {
+        	GeneralTree<T> nodo = queue.dequeue();
+            if(nodo.getData().equals(b)) {
+                return true;
+            } else {
+                List<GeneralTree<T>> children = nodo.getChildren();
+                for (GeneralTree<T> child: children) {
+                    queue.enqueue(child);
+                }
+            }
+        }
+        return false;
+    }
+
 }

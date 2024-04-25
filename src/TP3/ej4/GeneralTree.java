@@ -1,8 +1,7 @@
-package TP3.ej3;
+package TP3.ej4;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import TP1.ej8.Queue;
 
 public class GeneralTree<T>{

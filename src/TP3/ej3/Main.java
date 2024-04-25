@@ -32,19 +32,22 @@ public class Main {
 		children.add(A3);
 		GeneralTree<Integer> A = new GeneralTree<Integer>(4,children);
 		
+		//RecorridosAG recorridos = new RecorridosAG();
+		//int num = 3;
 		
-		RecorridosAG recorridos = new RecorridosAG();
-		int num = 3;
+		//List<Integer> listaImparesPreOrder = recorridos.numerosImparesMayoresQuePreOrden(A, num);
+		//List<Integer> listaImparesLevelOrden = recorridos.numerosImparesMayoresQuePorNiveles(A, num);
+		//List<Integer> listaImparesLevelInOrden= recorridos.numerosImparesMayoresQueInOrden(A, num);
+		//List<Integer> listaImparesLevelOrden = recorridos.numerosImparesMayoresQuePorNiveles(A, num);
 		
-		List<Integer> listaImparesPreOrder = recorridos.numerosImparesMayoresQuePreOrden(A, num);
-		List<Integer> listaImparesLevelOrden = recorridos.numerosImparesMayoresQuePorNiveles(A, num);
-
+		//System.out.println();
+		//System.out.println("La longitud del camino más largo desde el nodo raíz hasta una hoja es "+A3.altura());
+		
+		//System.out.println();
+		//System.out.println("El nivel del dato en el arbol es "+A.nivel(6));
 		
 		System.out.println();
-		System.out.println("La longitud del camino más largo desde el nodo raíz hasta una hoja es "+A3.altura());
-		
-		System.out.println();
-		System.out.println("El nivel del dato en el arbol es "+A2.nivel(3));
+		System.out.println("La amplitud o ancho del arbol es "+A.ancho());
 	}
 	
 }
